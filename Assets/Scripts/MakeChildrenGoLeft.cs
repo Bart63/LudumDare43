@@ -16,11 +16,22 @@ public class MakeChildrenGoLeft : MonoBehaviour {
 	}
 	
 	void Update () {
+        speed += Time.deltaTime;
         float delta = Time.deltaTime*speed;
 
         foreach (Rigidbody2D rb in childrenTransform)
         {
-            rb.AddForce(new Vector2(-1 * delta, 0));
+            rb.velocity = new Vector2(-1 * delta, 0);
         }
 	}
+
+    public void AddRB2D(Rigidbody2D rb)
+    {
+        childrenTransform.Add(rb);
+    }
+
+    public void RemoveRB2D(Rigidbody2D rb)
+    {
+        childrenTransform.Remove(rb);
+    }
 }

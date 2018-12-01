@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class AddAContainer : MonoBehaviour {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Weszlo");
-        Debug.Log(collision.gameObject.layer);
-    }
+    public RectTransform creationPosition;
+    public GameObject container;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Weszlo");
-        Debug.Log(collision.gameObject.layer);
+        GameObject temp = new GameObject(), hit = collision.gameObject;
+        Vector3 pos = new Vector3();
+        MakeChildrenGoLeft script = FindObjectOfType<MakeChildrenGoLeft>();
+
+        if (hit.layer == 9)
+        {
+            pos = creationPosition.position + new Vector3(hit.transform.position.x, 0, 0);
+            temp = Instantiate(container, pos, Quaternion.identity, script.gameObject.transform);
+            script.AddRB2D(temp.GetComponent<Rigidbody2D>());
+        }
     }
 }
