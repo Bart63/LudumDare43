@@ -11,8 +11,11 @@ public class collider : MonoBehaviour
 
         if (hit.layer == 13)
         {
+            FindObjectOfType<AudioManager>().Play("kruk2");
+
             Destroy(hit);
             Destroy(gameObject);
+
         }
     }
 }

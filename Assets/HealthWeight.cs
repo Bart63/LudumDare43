@@ -19,6 +19,12 @@ public class HealthWeight : MonoBehaviour {
             CurrentHealth += 1;
             script.currentFood -= 1;
         }
+
+        if (CurrentHealth <= 0)
+        {
+            FindObjectOfType<AudioManager>().Play("DestroyBallon");
+        }
+
     }
 
  private void OnTriggerEnter2D(Collider2D collision)

@@ -15,5 +15,10 @@ public class Throw : MonoBehaviour
             b.GetComponent<Rigidbody2D>().AddForce(velo*20);
         }
 
+        if (Input.GetMouseButton(0)) ;
+        {
+            FindObjectOfType<AudioManager>().Play("Throw");
+        }
+
     }
 }
