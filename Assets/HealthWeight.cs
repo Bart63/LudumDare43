@@ -14,7 +14,7 @@ public class HealthWeight : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButton(1) && script.currentFood>0 && CurrentHealth<100)
+        if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
             CurrentHealth += 1;
             script.currentFood -= 1;
