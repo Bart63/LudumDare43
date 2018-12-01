@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class MakeChildrenGoLeftBackground : MonoBehaviour
 {
     public GameObject backgroundPrefab;
-    public Image background;
+    public Sprite background;
     public float speed = 1f;
     public float acc = 1f;
+    public int layer;
 
-    
-    List<Rigidbody2D> childrenTransform = new List<Rigidbody2D>();
+    [HideInInspector]
+    public List<Rigidbody2D> childrenTransform = new List<Rigidbody2D>();
 
     void Start()
     {
@@ -35,7 +36,9 @@ public class MakeChildrenGoLeftBackground : MonoBehaviour
     public void AddBackground(Transform pos)
     {
         GameObject go = Instantiate(backgroundPrefab, pos.position + new Vector3(800, 0, 0), Quaternion.identity, transform);
-        go.GetComponent<Image>().sprite = background.sprite;
+        go.GetComponent<Image>().sprite = background;
+        childrenTransform.Add(go.GetComponent<Rigidbody2D>());
+        go.layer = layer;
     }
     
 }

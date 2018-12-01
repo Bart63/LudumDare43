@@ -10,7 +10,8 @@ public class AddNextBackground : MonoBehaviour
         GameObject hit = collision.gameObject;
         if (hit.layer == 16 || hit.layer == 17 || hit.layer == 18)
         {
-            scripts[hit.layer - 16].AddBackground(collision.transform);
+            Debug.Log(hit.gameObject.name + " " + hit.layer);
+            scripts[hit.layer - 16].AddBackground(hit.transform);
             //jakas funkcja w zmiennej script
         }
     }
