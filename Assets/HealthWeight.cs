@@ -15,12 +15,14 @@ public class HealthWeight : MonoBehaviour {
     public GameObject HPBar;
     public GameObject FoodBar;
 
+    private float width;
+
     HeightOfBaloon script;
 
     private void Start()
     {
         script = FindObjectOfType<HeightOfBaloon>();
-
+        width = Life.GetComponent<RectTransform>().rect.width;
         Life.text = "Life: " + CurrentHealth.ToString();
         Food.text = "Food: " + CurrentFood.ToString();
 
@@ -31,8 +33,8 @@ public class HealthWeight : MonoBehaviour {
 
         if (HPBar != null && FoodBar != null)
         {
-            HPBar.transform.localScale = new Vector3((float)CurrentHealth / (float)MaxHealth, 1, 0);
-            FoodBar.transform.localScale = new Vector3((float)CurrentFood / (float)MaxFood, 1, 0);
+            HPBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentHealth / (float)MaxHealth* width, HPBar.GetComponent<RectTransform>().sizeDelta.y);
+            FoodBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentFood / (float)MaxFood * width, FoodBar.GetComponent<RectTransform>().sizeDelta.y);
         }
 
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
