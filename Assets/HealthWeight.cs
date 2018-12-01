@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class HealthWeight : MonoBehaviour {
     public int MaxHealth;
+    public int MaxFood;
     public int CurrentHealth;
+    public int CurrentFood;
+
+    public GameObject HPBar;
+    public GameObject FoodBar;
+
     HeightOfBaloon script;
 
     private void Start()
     {
         script = FindObjectOfType<HeightOfBaloon>();
+
+        MaxHealth = 3;
+        MaxFood = 10;
+        CurrentHealth = 3;
+        CurrentFood = 10;
+
     }
 
     void Update()
     {
+
+        HPBar.transform.localScale = new Vector3 (CurrentHealth / MaxHealth, 1, 0);
+
+
+
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
             CurrentHealth += 1;
@@ -36,6 +53,13 @@ public class HealthWeight : MonoBehaviour {
         {
             Destroy(hit);
             CurrentHealth -= 3;
+            if (CurrentHealth <= 0)
+            {
+                CurrentHealth = 0;
+            }
+            
         }
+
+
     }
 }

@@ -36,7 +36,7 @@ public class Throw : MonoBehaviour
             anim.SetBool("Mouse Input", false);
         }
 
-        if (Input.GetMouseButton(0)) ;
+        if (Input.GetMouseButton(0))
         {
             FindObjectOfType<AudioManager>().Play("Throw");
         }
