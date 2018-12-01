@@ -23,11 +23,11 @@ public class HealthWeight : MonoBehaviour {
     void Update()
     {
 
-        if (HPBar != null)
+        if (HPBar != null && FoodBar != null)
         {
             HPBar.transform.localScale = new Vector3((float)CurrentHealth / (float)MaxHealth, 1, 0);
+            FoodBar.transform.localScale = new Vector3((float)CurrentFood / (float)MaxFood, 1, 0);
         }
-
 
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
@@ -41,6 +41,10 @@ public class HealthWeight : MonoBehaviour {
             FindObjectOfType<AudioManager>().Play("DestroyBallon");
         }
 
+        if (CurrentFood <= 0)
+        {
+            CurrentHealth = 0;
+        }
     }
 
  private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +53,8 @@ public class HealthWeight : MonoBehaviour {
 
         if (hit.layer == 13)
         {
+            FindObjectOfType<AudioManager>().Play("kruk2");
+
             Destroy(hit);
             CurrentHealth -= 3;
             if (CurrentHealth <= 0)
