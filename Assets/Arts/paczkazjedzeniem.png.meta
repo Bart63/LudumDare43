@@ -1,7 +1,12 @@
 fileFormatVersion: 2
-guid: 7a913917aa69652419b7878f0fb8e840
+guid: 0e051bee55cdd3d4fbf232487eedaef2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: paczkazjedzeniem_0
+    21300002: paczkazjedzeniem_1
+    21300004: paczkazjedzeniem_2
+    21300006: paczkazjedzeniem_3
+    21300008: paczkazjedzeniem_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +45,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,11 +120,111 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: paczkazjedzeniem_0
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 397
+        width: 305
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33addced967375344b467dbc1c153e8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paczkazjedzeniem_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 46
+        width: 520
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b32c8aada3966409938000da79415f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paczkazjedzeniem_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 537
+        width: 161
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06159f8dd691b0c4aafd960452970a6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paczkazjedzeniem_3
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 291
+        width: 161
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6872501dad9fa4342876ff72de3275fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paczkazjedzeniem_4
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 27
+        width: 161
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6885819c0e9637041b9160cacb940dd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d3bda53d822ec9c41be4b4beef8e903f
     vertices: []
     indices: 
     edges: []
