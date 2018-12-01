@@ -14,10 +14,11 @@ public class HealthWeight : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButton(1) && script.currentFood>0)
+        if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
             CurrentHealth += 1;
             script.currentFood -= 1;
+            FindObjectOfType<GetFatter>().GetMoreFat();
         }
 
         if (CurrentHealth <= 0)
@@ -29,7 +30,7 @@ public class HealthWeight : MonoBehaviour {
 
  private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject tr = new GameObject(), hit = collision.gameObject;
+        GameObject hit = collision.gameObject;
 
         if (hit.layer == 13)
         {

@@ -6,7 +6,7 @@ public class Damage : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer==10)
+        if(collision.gameObject.layer==13)
         {
             Debug.Log("Take damage");
         }
