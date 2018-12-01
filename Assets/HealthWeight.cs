@@ -6,14 +6,19 @@ using UnityEngine.UI;
 public class HealthWeight : MonoBehaviour {
     public int MaxHealth;
     private int MaxFood;
+    public int MaxFull;
+
     public int CurrentHealth;
     private int CurrentFood;
+    public int CurrentFull;
 
     public Text Life;
     public Text Food;
+    public Text Full;
 
     public GameObject HPBar;
     public GameObject FoodBar;
+    public GameObject FullBar;
 
     private float width;
 
@@ -35,16 +40,26 @@ public class HealthWeight : MonoBehaviour {
     {
         MaxFood = transform.parent.GetComponent<HeightOfBaloon>().maxFood;
         CurrentFood = transform.parent.GetComponent<HeightOfBaloon>().currentFood;
-        if (HPBar != null && FoodBar != null)
+        if (HPBar != null && FoodBar != null && FullBar != null)
         {
             HPBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentHealth / (float)MaxHealth* width, HPBar.GetComponent<RectTransform>().sizeDelta.y);
             FoodBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentFood / (float)MaxFood * width, FoodBar.GetComponent<RectTransform>().sizeDelta.y);
+            FullBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentFull / (float)MaxFull * width, FoodBar.GetComponent<RectTransform>().sizeDelta.y);
         }
 
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
             CurrentHealth += 1;
             FindObjectOfType<GetFatter>().GetMoreFat();
+        }
+
+        Life.text = "Life: " + CurrentHealth.ToString();
+        Food.text = "Food: " + CurrentFood.ToString();
+
+        if (Input.GetMouseButtonDown(1) && script.currentFood > 0 && CurrentHealth <= 100)
+        {
+            CurrentFull += CurrentFull;
+            Full.text = "Being full: " + CurrentFull.ToString();
         }
 
         Life.text = "Life: " + CurrentHealth.ToString();
@@ -59,6 +74,7 @@ public class HealthWeight : MonoBehaviour {
         {
             CurrentHealth = 0;
         }
+
     }
 
  private void OnTriggerEnter2D(Collider2D collision)
