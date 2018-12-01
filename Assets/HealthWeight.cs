@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthWeight : MonoBehaviour {
     public int MaxHealth;
     public int MaxFood;
     public int CurrentHealth;
     public int CurrentFood;
+
+    public Text Life;
+    public Text Food;
 
     public GameObject HPBar;
     public GameObject FoodBar;
@@ -16,7 +20,9 @@ public class HealthWeight : MonoBehaviour {
     private void Start()
     {
         script = FindObjectOfType<HeightOfBaloon>();
-        
+
+        Life.text = "Life: " + CurrentHealth.ToString();
+        Food.text = "Food: " + CurrentFood.ToString();
 
     }
 
@@ -34,6 +40,8 @@ public class HealthWeight : MonoBehaviour {
             CurrentHealth += 1;
             script.currentFood -= 1;
             FindObjectOfType<GetFatter>().GetMoreFat();
+            Life.text = "Life: " + CurrentHealth.ToString();
+            Food.text = "Food: " + CurrentFood.ToString();
         }
 
         if (CurrentHealth <= 0)
@@ -60,8 +68,11 @@ public class HealthWeight : MonoBehaviour {
             if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
+                Life.text = "Life: " + CurrentHealth.ToString();
             }
-            
+
+            Life.text = "Life: " + CurrentHealth.ToString();
+
         }
 
 
