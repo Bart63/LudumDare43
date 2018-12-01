@@ -6,6 +6,7 @@ public class HeightOfBaloon : MonoBehaviour {
 
     public Transform maxHeight, minHeight;
     public int maxFood, currentFood;
+    public int maxWeight, Weight;
     private float ymax, ymin;
     public float speed;
     void Start ()
@@ -13,7 +14,7 @@ public class HeightOfBaloon : MonoBehaviour {
         ymax = maxHeight.position.y;
         ymin = minHeight.position.y;
 
-        float currentDestination = (currentFood * ymin + (maxFood - currentFood) * ymax) / maxFood;
+        float currentDestination = (Weight * ymin + (maxWeight - Weight) * ymax) / maxWeight;
 
         transform.position = new Vector3(transform.position.x, currentDestination, transform.position.z);
     }
@@ -23,7 +24,7 @@ public class HeightOfBaloon : MonoBehaviour {
         ymax = maxHeight.position.y;
         ymin = minHeight.position.y;
 
-        float currentDestination = (currentFood * ymin + (maxFood - currentFood) * ymax) / maxFood;
+        float currentDestination = (Weight * ymin + (maxWeight - Weight) * ymax) / maxWeight;
         float deltaPosition = currentDestination - transform.position.y;
 
         if (Mathf.Abs(deltaPosition) > .01f)
