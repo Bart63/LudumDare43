@@ -16,18 +16,14 @@ public class HealthWeight : MonoBehaviour {
     private void Start()
     {
         script = FindObjectOfType<HeightOfBaloon>();
-
-        MaxHealth = 3;
-        MaxFood = 10;
-        CurrentHealth = 3;
-        CurrentFood = 10;
+        
 
     }
 
     void Update()
     {
 
-        HPBar.transform.localScale = new Vector3 (CurrentHealth / MaxHealth, 1, 0);
+        HPBar.transform.localScale = new Vector3 ((float)CurrentHealth / (float)MaxHealth, 1, 0);
 
 
 
