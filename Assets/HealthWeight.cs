@@ -18,6 +18,7 @@ public class HealthWeight : MonoBehaviour {
         {
             CurrentHealth += 1;
             script.currentFood -= 1;
+            FindObjectOfType<GetFatter>().GetMoreFat();
         }
     }
 
