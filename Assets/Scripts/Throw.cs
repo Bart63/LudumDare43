@@ -5,14 +5,28 @@ public class Throw : MonoBehaviour
 {
     public Transform LeftBottom;
     public GameObject bullet;
+
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            anim.SetBool("Mouse Input", true);
+            Debug.Log("Throw");
             Vector2 velo = LeftBottom.position + Input.mousePosition - transform.GetChild(0).position;
             GameObject b = Instantiate(bullet, new Vector3(0,0,0), Quaternion.identity, transform);
             b.transform.localPosition = new Vector3(0, 0, 0);
             b.GetComponent<Rigidbody2D>().AddForce(velo*20);
+        }
+        else
+        {
+            anim.SetBool("Mouse Input", false);
         }
 
     }
