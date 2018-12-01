@@ -28,10 +28,11 @@ public class HeightOfBaloon : MonoBehaviour {
 
         if (Mathf.Abs(deltaPosition) > .01f)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, deltaPosition*Time.deltaTime*speed);
+            //GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(new Vector2(0,transform.position.y), new Vector2(0, currentDestination), Time.deltaTime);
+            //GetComponent<Rigidbody2D>().velocity = new Vector2(0, deltaPosition*Time.deltaTime*speed);
         }
 
         //the same thing but on transform
-        //transform.position = new Vector3(transform.position.x, transform.position.y+deltaPosition*Time.deltaTime, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y+deltaPosition*Time.deltaTime, transform.position.z);
     }
 }
