@@ -39,6 +39,10 @@ public class HealthWeight : MonoBehaviour {
             FindObjectOfType<AudioManager>().Play("DestroyBallon");
         }
 
+        if (CurrentFood <= 0)
+        {
+            CurrentHealth = 0;
+        }
     }
 
  private void OnTriggerEnter2D(Collider2D collision)
@@ -47,6 +51,8 @@ public class HealthWeight : MonoBehaviour {
 
         if (hit.layer == 13)
         {
+            FindObjectOfType<AudioManager>().Play("kruk2");
+
             Destroy(hit);
             CurrentHealth -= 3;
             if (CurrentHealth <= 0)
