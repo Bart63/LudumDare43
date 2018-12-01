@@ -5,6 +5,7 @@ using UnityEngine;
 public class MakeChildrenGoLeft : MonoBehaviour {
 
     public float speed = 1f;
+    public float acc = 1f;
 
     List<Rigidbody2D> childrenTransform = new List<Rigidbody2D>();
 
@@ -16,8 +17,8 @@ public class MakeChildrenGoLeft : MonoBehaviour {
 	}
 	
 	void Update () {
-        speed += Time.deltaTime;
-        float delta = Time.deltaTime*speed;
+        speed += Time.deltaTime* acc;
+        float delta = Time.deltaTime*speed*speed;
 
         foreach (Rigidbody2D rb in childrenTransform)
         {

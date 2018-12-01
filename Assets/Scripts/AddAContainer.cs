@@ -6,10 +6,11 @@ public class AddAContainer : MonoBehaviour {
 
     public RectTransform creationPosition;
     public List<GameObject> container = new List<GameObject>();
+    private GameObject temp;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject temp = new GameObject(), hit = collision.gameObject;
+        GameObject hit = collision.gameObject;
         Vector3 pos = new Vector3();
         MakeChildrenGoLeft script = FindObjectOfType<MakeChildrenGoLeft>();
 

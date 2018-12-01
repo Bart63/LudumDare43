@@ -5,6 +5,5 @@ using UnityEngine;
 public class CreateObstacles : MonoBehaviour {
     
 	void Start () {
-        Debug.Log("Create obstacles");
 	}
 }

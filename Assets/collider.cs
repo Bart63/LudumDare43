@@ -7,7 +7,7 @@ public class collider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject tr = new GameObject(), hit = collision.gameObject;
+        GameObject hit = collision.gameObject;
 
         if (hit.layer == 13)
         {
