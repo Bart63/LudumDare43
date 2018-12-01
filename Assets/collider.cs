@@ -12,7 +12,7 @@ public class collider : MonoBehaviour
         if (hit.layer == 13)
         {
             FindObjectOfType<AudioManager>().Play("kruk2");
-
+            Debug.Log("kill");
             Destroy(hit);
             Destroy(gameObject);
 
