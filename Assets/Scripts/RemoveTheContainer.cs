@@ -14,7 +14,7 @@ public class RemoveTheContainer : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject hit = collision.gameObject;
-        if (hit.layer == 9)
+        if (hit.layer == 9 )
         {
             script.RemoveRB2D(hit.GetComponent<Rigidbody2D>());
             Destroy(hit);
