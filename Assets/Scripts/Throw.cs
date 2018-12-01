@@ -19,8 +19,6 @@ public class Throw : MonoBehaviour
     {
         ratiox = 1024.0f/(float)Screen.width;
         ratioy = 720.0f / (float)Screen.height;
-        Debug.Log(Screen.width + " " + Screen.height);
-        Debug.Log(ratiox.ToString() + " " + ratioy.ToString());
         if (Input.GetMouseButtonDown(0))
         {
             int food = transform.parent.GetComponent<HeightOfBaloon>().currentFood;

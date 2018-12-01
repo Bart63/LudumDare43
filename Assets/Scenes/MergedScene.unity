@@ -1090,7 +1090,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  MaxFood: 0
   CurrentHealth: 100
+  CurrentFood: 0
+  HPBar: {fileID: 0}
+  FoodBar: {fileID: 0}
 --- !u!1 &1198680906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,11 +1830,6 @@ Prefab:
     - target: {fileID: 4425546295146266, guid: 56aa8af047a80ed46a3c0d5e95f3314e, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114565951681397624, guid: 56aa8af047a80ed46a3c0d5e95f3314e,
-        type: 2}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56aa8af047a80ed46a3c0d5e95f3314e, type: 2}
