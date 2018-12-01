@@ -7,6 +7,7 @@ public class HeightOfBaloon : MonoBehaviour {
     public Transform maxHeight, minHeight;
     public int maxFood, currentFood;
     private float ymax, ymin;
+    public float speed;
     void Start ()
     {
         ymax = maxHeight.position.y;
@@ -24,7 +25,13 @@ public class HeightOfBaloon : MonoBehaviour {
 
         float currentDestination = (currentFood * ymin + (maxFood - currentFood) * ymax) / maxFood;
         float deltaPosition = currentDestination - transform.position.y;
-        
-        transform.position = new Vector3(transform.position.x, transform.position.y+deltaPosition*Time.deltaTime, transform.position.z);
+
+        if (Mathf.Abs(deltaPosition) > .01f)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, deltaPosition*Time.deltaTime*speed);
+        }
+
+        //the same thing but on transform
+        //transform.position = new Vector3(transform.position.x, transform.position.y+deltaPosition*Time.deltaTime, transform.position.z);
     }
 }

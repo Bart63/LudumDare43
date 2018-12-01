@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class AddAContainer : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Weszlo");
+        Debug.Log(collision.gameObject.layer);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Weszlo");
+        Debug.Log(collision.gameObject.layer);
+    }
 }

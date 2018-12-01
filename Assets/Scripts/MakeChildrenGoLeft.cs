@@ -6,21 +6,21 @@ public class MakeChildrenGoLeft : MonoBehaviour {
 
     public float speed = 1f;
 
-    List<RectTransform> childrenTransform = new List<RectTransform>();
+    List<Rigidbody2D> childrenTransform = new List<Rigidbody2D>();
 
 	void Start () {
 		for(int i=0; i<transform.childCount; i++)
         {
-            childrenTransform.Add(transform.GetChild(i).GetComponent<RectTransform>());
+            childrenTransform.Add(transform.GetChild(i).GetComponent<Rigidbody2D>());
         }
 	}
 	
 	void Update () {
         float delta = Time.deltaTime*speed;
 
-        foreach (RectTransform rt in childrenTransform)
+        foreach (Rigidbody2D rb in childrenTransform)
         {
-            rt.position = new Vector3(rt.position.x-delta, rt.position.y, rt.position.z);
+            rb.AddForce(new Vector2(-1 * delta, 0));
         }
 	}
 }
