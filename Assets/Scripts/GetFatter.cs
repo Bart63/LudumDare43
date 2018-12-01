@@ -19,7 +19,7 @@ public class GetFatter : MonoBehaviour {
         {
             currentStep++;
             GetComponent<RectTransform>().localScale = new Vector3( (slim*(steps-currentStep)+fat*currentStep)/steps, scale.y, scale.z);
-            FindObjectOfType<HeightOfBaloon>().currentFood += 2;
+            FindObjectOfType<HeightOfBaloon>().Weight += 2;
         }
     }
 	

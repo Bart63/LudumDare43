@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class HealthWeight : MonoBehaviour {
     public int MaxHealth;
-    public int MaxFood;
+    private int MaxFood;
     public int CurrentHealth;
-    public int CurrentFood;
+    private int CurrentFood;
 
     public Text Life;
     public Text Food;
@@ -21,6 +21,9 @@ public class HealthWeight : MonoBehaviour {
 
     private void Start()
     {
+        MaxFood = transform.parent.GetComponent<HeightOfBaloon>().maxFood;
+        CurrentFood = transform.parent.GetComponent<HeightOfBaloon>().currentFood;
+
         script = FindObjectOfType<HeightOfBaloon>();
         width = Life.GetComponent<RectTransform>().rect.width;
         Life.text = "Life: " + CurrentHealth.ToString();
@@ -30,7 +33,8 @@ public class HealthWeight : MonoBehaviour {
 
     void Update()
     {
-
+        MaxFood = transform.parent.GetComponent<HeightOfBaloon>().maxFood;
+        CurrentFood = transform.parent.GetComponent<HeightOfBaloon>().currentFood;
         if (HPBar != null && FoodBar != null)
         {
             HPBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentHealth / (float)MaxHealth* width, HPBar.GetComponent<RectTransform>().sizeDelta.y);
@@ -40,11 +44,11 @@ public class HealthWeight : MonoBehaviour {
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
             CurrentHealth += 1;
-            script.currentFood -= 1;
             FindObjectOfType<GetFatter>().GetMoreFat();
-            Life.text = "Life: " + CurrentHealth.ToString();
-            Food.text = "Food: " + CurrentFood.ToString();
         }
+
+        Life.text = "Life: " + CurrentHealth.ToString();
+        Food.text = "Food: " + CurrentFood.ToString();
 
         if (CurrentHealth <= 0)
         {

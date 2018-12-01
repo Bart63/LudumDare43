@@ -815,6 +815,8 @@ MonoBehaviour:
   minHeight: {fileID: 722144756}
   maxFood: 10
   currentFood: 10
+  maxWeight: 20
+  Weight: 10
   speed: 5
 --- !u!1 &722144755
 GameObject:
@@ -1688,9 +1690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  MaxFood: 20
   CurrentHealth: 100
-  CurrentFood: 20
   Life: {fileID: 1568600189}
   Food: {fileID: 1088965122}
   HPBar: {fileID: 366153614}
