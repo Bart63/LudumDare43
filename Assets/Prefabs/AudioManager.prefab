@@ -157,7 +157,7 @@ MonoBehaviour:
   - name: kruk2
     clip: {fileID: 8300000, guid: be5007ee4ba7b4b4e9c164023e06a870, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: theme1

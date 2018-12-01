@@ -29,9 +29,11 @@ public class HealthWeight : MonoBehaviour {
     void Update()
     {
 
-        HPBar.transform.localScale = new Vector3 ((float)CurrentHealth / (float)MaxHealth, 1, 0);
-        FoodBar.transform.localScale = new Vector3((float)CurrentFood / (float)MaxFood, 1, 0);
-
+        if (HPBar != null && FoodBar != null)
+        {
+            HPBar.transform.localScale = new Vector3((float)CurrentHealth / (float)MaxHealth, 1, 0);
+            FoodBar.transform.localScale = new Vector3((float)CurrentFood / (float)MaxFood, 1, 0);
+        }
 
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
