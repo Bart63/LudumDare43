@@ -33,7 +33,15 @@ public class HealthWeight : MonoBehaviour {
         width = Life.GetComponent<RectTransform>().rect.width;
         Life.text = "Life: " + CurrentHealth.ToString();
         Food.text = "Food: " + CurrentFood.ToString();
+        CurrentFull += 1;
+        InvokeRepeating("DecremantationOfFood", 0f, 1f);
+    }
 
+    void DecremantationOfFood()
+    {
+        Debug.Log("Decr");
+        CurrentFull -= 1;
+        //StartCoroutine("DecremantationOfFood", 1f);
     }
 
     void Update()
@@ -47,22 +55,21 @@ public class HealthWeight : MonoBehaviour {
             FullBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)CurrentFull / (float)MaxFull * width, FoodBar.GetComponent<RectTransform>().sizeDelta.y);
         }
 
-        if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
-        {
-            transform.parent.GetComponent<HeightOfBaloon>().currentFood--;
-            CurrentHealth += 3;
-            FindObjectOfType<GetFatter>().GetMoreFat();
-        }
-
-        Life.text = "Life: " + CurrentHealth.ToString();
-        Food.text = "Food: " + CurrentFood.ToString();
-
         if (Input.GetMouseButtonDown(1) && script.currentFood > 0 && CurrentHealth <= 100)
         {
-            CurrentFull += CurrentFull;
-            Full.text = "Being full: " + CurrentFull.ToString();
+            FindObjectOfType<GetFatter>().GetMoreFat();
+
+            CurrentFull += 10;
+            transform.parent.GetComponent<HeightOfBaloon>().currentFood--;
+            transform.parent.GetComponent<HeightOfBaloon>().Weight--;
+
+            if(CurrentFull>MaxFull)
+            {
+                CurrentFull = MaxFull;
+            }
         }
 
+        Full.text = "Fullness: " + CurrentFull.ToString();
         Life.text = "Life: " + CurrentHealth.ToString();
         Food.text = "Food: " + CurrentFood.ToString();
 
@@ -70,12 +77,6 @@ public class HealthWeight : MonoBehaviour {
         {
             FindObjectOfType<AudioManager>().Play("DestroyBallon");
         }
-
-        if (CurrentFood <= 0)
-        {
-            CurrentHealth = 0;
-        }
-
     }
 
  private void OnTriggerEnter2D(Collider2D collision)

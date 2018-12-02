@@ -8,10 +8,17 @@ public class GetFatter : MonoBehaviour {
     public int steps;
     private Vector3 scale;
     private int currentStep = 0;
+    private float prev, curr;
 	void Start () {
         scale = GetComponent<RectTransform>().localScale;
         GetComponent<RectTransform>().localScale = new Vector3(slim, scale.y,scale.z);	
 	}
+
+
+    private void Update()
+    {
+        
+    }
 
     public void GetMoreFat()
     {
