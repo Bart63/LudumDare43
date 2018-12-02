@@ -50,7 +50,7 @@ public class HealthWeight : MonoBehaviour {
         if (Input.GetMouseButtonDown(1) && script.currentFood>0 && CurrentHealth<100)
         {
             transform.parent.GetComponent<HeightOfBaloon>().currentFood--;
-            CurrentHealth += 1;
+            CurrentHealth += 3;
             FindObjectOfType<GetFatter>().GetMoreFat();
         }
 
