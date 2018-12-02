@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HealthWeight : MonoBehaviour {
+
+    private float time;
+
     public int MaxHealth;
     private int MaxFood;
     public int MaxFull;
@@ -16,6 +19,7 @@ public class HealthWeight : MonoBehaviour {
     public Text Life;
     public Text Food;
     public Text Full;
+    public Text Score;
 
     public GameObject HPBar;
     public GameObject FoodBar;
@@ -30,6 +34,9 @@ public class HealthWeight : MonoBehaviour {
     {
         MaxFood = transform.parent.GetComponent<HeightOfBaloon>().maxFood;
         CurrentFood = transform.parent.GetComponent<HeightOfBaloon>().currentFood;
+
+        time = 0;
+        Score.text = "Score: " + Mathf.Round(time).ToString();
 
         script = FindObjectOfType<HeightOfBaloon>();
         width = Life.GetComponent<RectTransform>().rect.width;
@@ -94,6 +101,9 @@ public class HealthWeight : MonoBehaviour {
         {
             FindObjectOfType<AudioManager>().Play("DestroyBallon");
         }
+
+        time +=  Time.deltaTime;
+        Score.text = "Score: " + Mathf.Round(time).ToString();
     }
 
  private void OnTriggerEnter2D(Collider2D collision)
