@@ -30,6 +30,9 @@ public class HealthWeight : MonoBehaviour {
 
     HeightOfBaloon script;
 
+    public GameObject foodImage1, foodImage2, foodImage3, foodImage4, foodImage5;
+
+
     private void Start()
     {
         MaxFood = transform.parent.GetComponent<HeightOfBaloon>().maxFood;
@@ -63,8 +66,54 @@ public class HealthWeight : MonoBehaviour {
         //StartCoroutine("DecremantationOfFood", 1f);
     }
 
+    void SetEveryMeatDisabled()
+    {
+        foodImage1.SetActive(false);
+        foodImage2.SetActive(false);
+        foodImage3.SetActive(false);
+        foodImage4.SetActive(false);
+        foodImage5.SetActive(false);
+    }
+
     void Update()
     {
+
+        if(CurrentFood <= 3)
+        {
+            SetEveryMeatDisabled();
+        }
+        else if(CurrentFood >=4 && CurrentFood <= 7){
+
+            SetEveryMeatDisabled();
+             foodImage1.SetActive(true);
+            
+        }
+        else if (CurrentFood >= 8 && CurrentFood <= 13)
+        {
+            SetEveryMeatDisabled();
+            foodImage1.SetActive(true);
+            foodImage2.SetActive(true);
+
+        }else if (CurrentFood >= 14 && CurrentFood <= 20)
+        {
+            SetEveryMeatDisabled();
+            foodImage1.SetActive(false);
+            foodImage2.SetActive(false);
+            foodImage3.SetActive(false);
+        }
+        else if (CurrentFood >= 20 && CurrentFood <= 25)
+        {
+            SetEveryMeatDisabled();
+            foodImage1.SetActive(false);
+            foodImage2.SetActive(false);
+            foodImage3.SetActive(false);
+        }
+
+
+
+
+
+
         if (CurrentFood <= 0)
         {
             Debug.Log("0 food");
