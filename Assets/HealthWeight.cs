@@ -63,7 +63,7 @@ public class HealthWeight : MonoBehaviour {
             deltaTime -= Time.deltaTime;
             if (deltaTime <= 0)
             {
-                CurrentFull -= 5;
+                CurrentFull -= 8;
                 deltaTime = 1f;
             }
         }
