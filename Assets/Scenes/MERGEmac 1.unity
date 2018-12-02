@@ -562,6 +562,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114565951681397624, guid: 56aa8af047a80ed46a3c0d5e95f3314e,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4425546295146266, guid: 56aa8af047a80ed46a3c0d5e95f3314e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 148.60814
@@ -593,6 +598,26 @@ Prefab:
     - target: {fileID: 4425546295146266, guid: 56aa8af047a80ed46a3c0d5e95f3314e, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565951681397624, guid: 56aa8af047a80ed46a3c0d5e95f3314e,
+        type: 2}
+      propertyPath: sounds.Array.data[4].name
+      value: birdsAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565951681397624, guid: 56aa8af047a80ed46a3c0d5e95f3314e,
+        type: 2}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d53f722fccbc6342b38167e6ff9aa9f, type: 3}
+    - target: {fileID: 114565951681397624, guid: 56aa8af047a80ed46a3c0d5e95f3314e,
+        type: 2}
+      propertyPath: sounds.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565951681397624, guid: 56aa8af047a80ed46a3c0d5e95f3314e,
+        type: 2}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56aa8af047a80ed46a3c0d5e95f3314e, type: 2}
