@@ -67,16 +67,12 @@ public class HealthWeight : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1) && script.currentFood > 0 && CurrentHealth <= 100)
         {
-            FindObjectOfType<GetFatter>().GetMoreFat();
+            FindObjectOfType<GetFatter>().GetMoreFat(CurrentFull);
 
             CurrentFull += 10;
             transform.parent.GetComponent<HeightOfBaloon>().currentFood--;
             transform.parent.GetComponent<HeightOfBaloon>().Weight--;
-
-            if(CurrentFull>MaxFull)
-            {
-                CurrentFull = MaxFull;
-            }
+            
         }
 
         Full.text = "Fullness: " + CurrentFull.ToString();
