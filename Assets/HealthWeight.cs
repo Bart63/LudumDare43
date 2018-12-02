@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthWeight : MonoBehaviour {
     public int MaxHealth;
@@ -104,11 +105,11 @@ public class HealthWeight : MonoBehaviour {
             FindObjectOfType<AudioManager>().Play("kruk2");
 
             Destroy(hit);
-            CurrentHealth -= 3;
+            CurrentHealth -= 10;
             if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
-                Application.LoadLevel(0);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             
 

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 59bd8c1a0b7439442bb7f9d53edf3f39
   - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 2a51f185f4fc856409f3dd088ced08f5
+  - enabled: 1
     path: Assets/Scenes/MERGEmac 1.unity
     guid: e61713a8681ea7d43b7547f955ada559
   m_configObjects: {}
