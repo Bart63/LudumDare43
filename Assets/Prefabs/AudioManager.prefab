@@ -52,7 +52,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.107
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -168,6 +168,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: throw
     clip: {fileID: 8300000, guid: d6fe4a281afe1574ca55b94d2f1636ea, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: birdsAttack
+    clip: {fileID: 8300000, guid: 1d53f722fccbc6342b38167e6ff9aa9f, type: 3}
     volume: 1
     pitch: 1
     loop: 0
