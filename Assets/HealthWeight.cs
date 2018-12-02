@@ -98,7 +98,7 @@ public class HealthWeight : MonoBehaviour {
             if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
-                Life.text = "Life: " + CurrentHealth.ToString();
+                Application.LoadLevel(0);
             }
 
             Life.text = "Life: " + CurrentHealth.ToString();
