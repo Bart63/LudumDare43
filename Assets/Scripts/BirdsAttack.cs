@@ -19,6 +19,12 @@ public class BirdsAttack : MonoBehaviour {
 
     public void MakeAWave()
     {
+        StartCoroutine("Go");
+    }
+
+    IEnumerator Go()
+    {
+        yield return new WaitForSeconds(2f);
         Instancja(GetRandomContainer());
     }
 
