@@ -24,7 +24,7 @@ public class GetFatter : MonoBehaviour {
         curr = Mathf.FloorToInt(FindObjectOfType<HealthWeight>().CurrentFull/10);
         if(curr <= prev-1)
         {
-            FindObjectOfType<HeightOfBaloon>().Weight -= 2;
+            FindObjectOfType<HeightOfBaloon>().Weight -= 3;
             prev = curr;
             Debug.Log("Go up");
         }
@@ -33,7 +33,7 @@ public class GetFatter : MonoBehaviour {
     public void GetMoreFat(int prevfull)
     {
         prev = Mathf.FloorToInt(FindObjectOfType<HealthWeight>().CurrentFull / 10);
-        FindObjectOfType<HeightOfBaloon>().Weight += 2;
+        FindObjectOfType<HeightOfBaloon>().Weight += 3;
     }
 	
 }

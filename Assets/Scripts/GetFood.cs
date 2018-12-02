@@ -16,7 +16,7 @@ public class GetFood : MonoBehaviour {
         if(collision.gameObject.layer==14)
         {
             hob.currentFood += 3;
-            hob.Weight += 2;
+            hob.Weight += 3;
             Destroy(collision.gameObject);
             if(gameObject.layer==19)
             {

@@ -20,6 +20,7 @@ public class HealthWeight : MonoBehaviour {
     public GameObject FoodBar;
     public GameObject FullBar;
 
+    private float deltaTime = 1f;
     private float width;
 
     HeightOfBaloon script;
@@ -56,6 +57,16 @@ public class HealthWeight : MonoBehaviour {
 
     void Update()
     {
+        if (CurrentFood <= 0)
+        {
+            Debug.Log("0 food");
+            deltaTime -= Time.deltaTime;
+            if (deltaTime <= 0)
+            {
+                CurrentFull -= 5;
+                deltaTime = 1f;
+            }
+        }
         MaxFood = transform.parent.GetComponent<HeightOfBaloon>().maxFood;
         CurrentFood = transform.parent.GetComponent<HeightOfBaloon>().currentFood;
         if (HPBar != null && FoodBar != null && FullBar != null)
@@ -71,7 +82,6 @@ public class HealthWeight : MonoBehaviour {
 
             CurrentFull += 10;
             transform.parent.GetComponent<HeightOfBaloon>().currentFood--;
-            transform.parent.GetComponent<HeightOfBaloon>().Weight--;
             
         }
 
@@ -100,6 +110,7 @@ public class HealthWeight : MonoBehaviour {
                 CurrentHealth = 0;
                 Application.LoadLevel(0);
             }
+            
 
             Life.text = "Life: " + CurrentHealth.ToString();
 

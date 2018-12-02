@@ -27,7 +27,7 @@ public class Throw : MonoBehaviour
             {
                 //FindObjectOfType<AudioManager>().Play("throw");
                 transform.parent.GetComponent<HeightOfBaloon>().currentFood--; 
-                transform.parent.GetComponent<HeightOfBaloon>().Weight--;
+                transform.parent.GetComponent<HeightOfBaloon>().Weight -= 3;
                 anim.SetBool("Mouse Input", true);
                 Debug.Log("throw");
                 Vector2 velo = LeftBottom.position + new Vector3(Input.mousePosition.x*ratiox,Input.mousePosition.y*ratioy) - arm.position;
