@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DieArea : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class DieArea : MonoBehaviour {
     {
         if(collision.gameObject.layer==21)
         {
-            Application.LoadLevel(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
