@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdsAttack : MonoBehaviour {
-    List<GameObject> children = new List<GameObject>();
+    public List<GameObject> children = new List<GameObject>();
+    public List<GameObject> signs = new List<GameObject>();
     float time = 0f, maxTime=15f;
     GameObject birdAttack;
     bool go = false;
     public float velocity = 100f, acc = 2f;
     private void Start()
     {
-        for(int i=0; i<transform.childCount; i++)
-        {
-            children.Add(transform.GetChild(i).gameObject);
-        }
         InvokeRepeating("MakeAWave", 15f, 20f);
     }
 
@@ -24,8 +21,16 @@ public class BirdsAttack : MonoBehaviour {
 
     IEnumerator Go()
     {
+        int index = Random.Range(0, transform.childCount - 1);
+        signs[index].SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        signs[index].SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        signs[index].SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        signs[index].SetActive(false);
         yield return new WaitForSeconds(2f);
-        Instancja(GetRandomContainer());
+        Instancja(children[index]);
     }
 
     private void Update()
@@ -48,12 +53,7 @@ public class BirdsAttack : MonoBehaviour {
             }
         }
     }
-
-    public GameObject GetRandomContainer()
-    {
-        return children[Random.Range(0, transform.childCount - 1)];
-    }
-
+    
     public void Instancja(GameObject child)
     {
         if (!go)
