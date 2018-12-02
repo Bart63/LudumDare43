@@ -16,6 +16,8 @@ public class GetHealth : MonoBehaviour
     {
         if (collision.gameObject.layer == 22)
         {
+            Debug.Log("Add health");
+            Destroy(collision.gameObject);
             hw.CurrentHealth += 10;
         }
     }
