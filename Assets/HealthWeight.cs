@@ -39,8 +39,18 @@ public class HealthWeight : MonoBehaviour {
 
     void DecremantationOfFood()
     {
-        Debug.Log("Decr");
-        CurrentFull -= 1;
+        if (CurrentFull <= 0)
+        {
+            CurrentHealth -=5;
+            if(CurrentHealth<0)
+            {
+                CurrentHealth = 0;
+            }
+        }
+        else
+        {
+            CurrentFull--;
+        }
         //StartCoroutine("DecremantationOfFood", 1f);
     }
 

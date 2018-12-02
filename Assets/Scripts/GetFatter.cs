@@ -17,17 +17,14 @@ public class GetFatter : MonoBehaviour {
 
     private void Update()
     {
-        
+        int numb = FindObjectOfType<HealthWeight>().CurrentFull;
+        Debug.Log(numb);
+        GetComponent<RectTransform>().localScale = new Vector3((slim * (100 - numb) + fat * numb) / 100, scale.y, scale.z);
     }
 
     public void GetMoreFat()
     {
-        if (currentStep < steps)
-        {
-            currentStep++;
-            GetComponent<RectTransform>().localScale = new Vector3( (slim*(steps-currentStep)+fat*currentStep)/steps, scale.y, scale.z);
-            FindObjectOfType<HeightOfBaloon>().Weight += 2;
-        }
+        FindObjectOfType<HeightOfBaloon>().Weight += 2;
     }
 	
 }
