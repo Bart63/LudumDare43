@@ -104,7 +104,7 @@ public class HealthWeight : MonoBehaviour {
             FindObjectOfType<AudioManager>().Play("kruk2");
 
             Destroy(hit);
-            CurrentHealth -= 3;
+            CurrentHealth -= 10;
             if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
