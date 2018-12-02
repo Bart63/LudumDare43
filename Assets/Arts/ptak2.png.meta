@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 3badac80f17adb44dbeb62d21830a0e0
+guid: 04650639bc4fefc48a68ec62e57ef2aa
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: dude 1_0
-    21300002: dude 1_1
-    21300004: dude 1_2
-    21300006: dude 1_3
-    21300008: dude 1_4
-    21300010: dude 1_5
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,131 +115,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: dude 1_0
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 152
-        width: 65
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c67b9e565ccf9f4aa039168a3180eb8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dude 1_1
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 165
-        width: 35
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1e78a44a2ecc3746ba470be138d8113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dude 1_2
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 146
-        width: 88
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d4138d2e18b5f245a68887996533250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dude 1_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 55
-        width: 74
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13ada202c8440f14b9f7d4644ca3c6c3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dude 1_4
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 54
-        width: 53
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33cf9633dbd8afe4c9145fe57d0bd47b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dude 1_5
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 51
-        width: 50
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75b70ca795db44142b1ed70624c6e766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1fe8cc852d0051848af55b636ae68034
+    spriteID: 
     vertices: []
     indices: 
     edges: []

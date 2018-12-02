@@ -25,7 +25,7 @@ public class Throw : MonoBehaviour
 
             if (food > 0)
             {
-                FindObjectOfType<AudioManager>().Play("throw");
+                //FindObjectOfType<AudioManager>().Play("throw");
                 transform.parent.GetComponent<HeightOfBaloon>().currentFood--; 
                 transform.parent.GetComponent<HeightOfBaloon>().Weight--;
                 anim.SetBool("Mouse Input", true);
