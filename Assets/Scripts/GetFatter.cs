@@ -18,7 +18,6 @@ public class GetFatter : MonoBehaviour {
     private void Update()
     {
         int numb = FindObjectOfType<HealthWeight>().CurrentFull;
-        Debug.Log(numb);
         GetComponent<RectTransform>().localScale = new Vector3((slim * (100 - numb) + fat * numb) / 100, scale.y, scale.z);
     }
 
